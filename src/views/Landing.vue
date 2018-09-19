@@ -23,8 +23,7 @@
                             <base-button tag="a"
                                          href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"
                                          class="mb-3 mb-sm-0 btn-lg"
-                                         type="info"
-                                         icon="fa fa-code">
+                                         type="info">
                                 Ξεκινηστε την παρουσιαση
                             </base-button>
                         </div>
@@ -32,14 +31,12 @@
                 </div>
                 <div class="row align-items-center justify-content-around stars-and-coded">
                     <div class="col-sm-4">
-                        <a href="https://github.com/creativetimofficial/argon-design-system" target="_blank"
-                           title="Support us on Github">
+                        <a href="https://www.csd.auth.gr/el/" target="_blank">
                             <img src="../assets/img/csd_logo.png">
                         </a>
                     </div>
                     <div class="col-sm-4 mt-4 mt-sm-0 text-right">
-                        <a href="https://www.creative-tim.com" target="_blank"
-                           title="Creative Tim - Premium Bootstrap Themes and Templates">
+                        <a href="http://oswinds.csd.auth.gr/" target="_blank">
                             <img src="../assets/img/oswinds_alt.png" class="ml-3" style="width: 200px;">
                         </a>
                     </div>
