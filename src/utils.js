@@ -3,12 +3,12 @@ import axios from 'axios'
 
 export default class AjaxCaller {
     constructor() {
-        this.apiPrefix = process.env.API_ROOT + '/api/v1/';
+        this.apiPrefix = process.env.API_ROOT + '/api/';
         this.CancelToken = axios.CancelToken;
         this.source = this.CancelToken.source();
     }
 
-    makeInternalCall(endpoint, data) {
+    get(endpoint, data) {
         return new Promise(resolve => {
 
             axios.get(this.apiPrefix + endpoint, {
@@ -20,6 +20,11 @@ export default class AjaxCaller {
                 console.log(error);
             })
 
+        });
+    }
+    post(endpoint, data) {
+        return new Promise(() => {
+            axios.post(this.apiPrefix + endpoint, data)
         });
     }
 

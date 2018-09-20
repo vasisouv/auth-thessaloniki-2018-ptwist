@@ -18,17 +18,18 @@
                     <div class="px-4 pb-3">
 
                         <div class="row justify-content-center">
-                            <div class="text-center mt-5"><h3 class="display-3">Τοποθεσίες</h3>
+                            <div class="text-center mt-5"><h3 class="display-3">Σύννεφο Λέξεων</h3>
                             </div>
                         </div>
-                        <leaflet-map class="mt-4" :coordinates="[]"></leaflet-map>
+                        <!--<leaflet-map class="mt-4" :coordinates="[]"></leaflet-map>-->
+                        <ptwist-wordcloud :words="words"></ptwist-wordcloud>
                     </div>
                     <div class="py-5 ml-3 border-top">
                         <div v-if="!reviewed">
                             <review-buttons :userHash="userHash" page="locations"></review-buttons>
                         </div>
                         <div v-else class="row mr-1 ml-1 text-center">
-                            <next-button next-page="/wordclouds"></next-button>
+                            <next-button next-page="/top-tweets"></next-button>
                         </div>
                     </div>
                 </card>
@@ -41,30 +42,29 @@
 
     import {Bus} from "../bus";
     import AjaxCaller from '../utils'
+
     const ajaxCaller = new AjaxCaller();
 
-    import saveReview from '../utils'
-
     export default {
-        name: "locations",
+        name: "wordclouds",
         props: ['userHash'],
         components: {},
+        mounted() {
+            this.getWordcloud();
+        },
         data() {
             return {
-
                 endpoint: 'twitter/locations',
-                reviewed: false
+                reviewed: false,
+                words: []
             }
         },
         methods: {
-            updateMap() {
-                this.dataReady = false;
-                let data = {};
-                ajaxCaller.makeInternalCall(this.endpoint, data).then((results) => {
-                    this.dataReady = true;
-                    this.mapCoordinates = results.data;
+            getWordcloud() {
+                ajaxCaller.get('wordclouds').then((results) => {
+                    this.words = results.data
                 });
-            },
+            }
         },
         created() {
             Bus.$on('reviewed', function (reviewed) {

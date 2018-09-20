@@ -20,12 +20,14 @@
                         <p class="lead text-white mt-4 mb-5">Πατήστε το παρακάτω πλήκτρο για να ξεκινήσετε την
                             διαδραστική παρουσίαση.</p>
                         <div class="btn-wrapper">
-                            <base-button tag="a"
-                                         href="https://demos.creative-tim.com/argon-design-system/docs/components/alerts.html"
-                                         class="mb-3 mb-sm-0 btn-lg"
-                                         type="info">
-                                Ξεκινηστε την παρουσιαση
-                            </base-button>
+                            <router-link to="/locations" title="Locations">
+                                <base-button tag="a"
+                                             href="#"
+                                             class="mb-3 mb-sm-0 btn-lg"
+                                             type="info">
+                                    Ξεκινηστε την παρουσιαση
+                                </base-button>
+                            </router-link>
                         </div>
                     </div>
                 </div>

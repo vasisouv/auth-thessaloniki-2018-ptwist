@@ -29,6 +29,7 @@
     "vue-lazyload": "^1.2.6",
     "vue-moment": "^4.0.0",
     "vue-router": "^3.0.1",
+    "vue-wordcloud": "^1.0.2",
     "vue2-leaflet": "^1.0.2",
     "vue2-transitions": "^0.2.3"
   },

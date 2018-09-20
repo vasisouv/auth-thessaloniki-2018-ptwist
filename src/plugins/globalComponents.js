@@ -18,7 +18,9 @@ import DateRangePicker from "../components/DateRangePicker"
 import LanguageSelect from "../components/LanguageSelect"
 import CollectionsSelect from "../components/CollectionsSelect"
 import Map from '../components/Map'
-import PTwistLoading from '../components/PTwistLoading'
+import ReviewButtons from '../components/ReviewButtons'
+import NextButton from '../components/NextButton'
+import Wordcloud from '../components/Wordcloud'
 
 
 export default {
@@ -42,6 +44,9 @@ export default {
         Vue.component(CollectionsSelect.name, CollectionsSelect);
         Vue.component(DateRangePicker.name, DateRangePicker);
         Vue.component(Map.name, Map);
-        Vue.component(PTwistLoading.name, PTwistLoading)
+        Vue.component(ReviewButtons.name, ReviewButtons);
+        Vue.component(NextButton.name, NextButton);
+        Vue.component(Wordcloud.name, Wordcloud);
+
     }
 };
