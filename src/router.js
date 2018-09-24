@@ -4,6 +4,9 @@ import Landing from "./views/Landing.vue";
 
 import Locations from "./views/Locations.vue";
 import Wordclouds from "./views/Wordclouds.vue";
+import Repository from "./views/Repository.vue";
+import TopTweets from "./views/TopTweets.vue";
+import Thanks from "./views/Thanks.vue";
 
 Vue.use(Router);
 
@@ -30,6 +33,27 @@ export default new Router({
             name: "wordclouds",
             components: {
                 default: Wordclouds,
+            }
+        },
+        {
+            path: "/repository",
+            name: "repository",
+            components: {
+                default: Repository,
+            }
+        },
+        {
+            path: "/top-tweets",
+            name: "top-tweets",
+            components: {
+                default: TopTweets,
+            }
+        },
+        {
+            path: "/thanks",
+            name: "thanks",
+            components: {
+                default: Thanks,
             }
         },
     ],

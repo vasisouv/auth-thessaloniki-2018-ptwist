@@ -1,14 +1,27 @@
 <template>
-    <div class="col-md-12">
-        <router-link :to="nextPage">
-            <base-button tag="a"
-                         href="#"
-                         class="mb-3 w-20 mb-sm-0 btn-lg"
-                         type="default">
-                Επομενο
-            </base-button>
-        </router-link>
-    </div>
+    <transition name="fade">
+        <div class="row">
+            <div class="col-md-8">
+                <h3 class="ml-5">
+                    <font-awesome-icon class="review-saved text-success" :icon="icon"/>
+                    Η βαθμολογία σας αποθηκεύτηκε!
+                </h3>
+            </div>
+            <div class="col-md-4 d-flex">
+
+                <router-link :to="nextPage">
+                    <base-button tag="a"
+                                 class="mb-3 text-white w-100 mr-5 mb-sm-0 btn-lg"
+                                 type="default">
+                        Επομενο
+                    </base-button>
+                </router-link>
+            </div>
+
+        </div>
+    </transition>
+
+
 </template>
 <script>
     export default {
@@ -16,6 +29,11 @@
         props: {
             nextPage: {
                 type: String
+            }
+        },
+        data() {
+            return {
+                icon: {prefix: 'fas', iconName: 'check-circle'}
             }
         }
     }

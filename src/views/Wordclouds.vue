@@ -21,15 +21,14 @@
                             <div class="text-center mt-5"><h3 class="display-3">Σύννεφο Λέξεων</h3>
                             </div>
                         </div>
-                        <!--<leaflet-map class="mt-4" :coordinates="[]"></leaflet-map>-->
                         <ptwist-wordcloud :words="words"></ptwist-wordcloud>
                     </div>
                     <div class="py-5 ml-3 border-top">
                         <div v-if="!reviewed">
-                            <review-buttons :userHash="userHash" page="locations"></review-buttons>
+                            <review-buttons :userHash="userHash" page="wordclouds"></review-buttons>
                         </div>
-                        <div v-else class="row mr-1 ml-1 text-center">
-                            <next-button next-page="/top-tweets"></next-button>
+                        <div v-else class="mr-1 ml-1 text-center">
+                            <next-button next-page="/repository"></next-button>
                         </div>
                     </div>
                 </card>
@@ -42,13 +41,14 @@
 
     import {Bus} from "../bus";
     import AjaxCaller from '../utils'
+    import PtwistLoading from "../components/PTwistLoading";
 
     const ajaxCaller = new AjaxCaller();
 
     export default {
         name: "wordclouds",
         props: ['userHash'],
-        components: {},
+        components: {PtwistLoading},
         mounted() {
             this.getWordcloud();
         },
@@ -62,7 +62,7 @@
         methods: {
             getWordcloud() {
                 ajaxCaller.get('wordclouds').then((results) => {
-                    this.words = results.data
+                    this.words = results.data;
                 });
             }
         },

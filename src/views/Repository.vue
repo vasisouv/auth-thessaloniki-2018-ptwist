@@ -18,55 +18,39 @@
                     <div class="px-4 pb-3">
 
                         <div class="row justify-content-center">
-                            <div class="text-center mt-5"><h3 class="display-3">Τοποθεσίες</h3>
+                            <div class="text-center mt-5"><h3 class="display-3">Σχέδια από το <a class="text-blue"
+                                    href="https://www.thingiverse.com/" target="_blank"> thingiverse.com</a></h3>
                             </div>
                         </div>
-                        <leaflet-map v-if="dataReady" class="mt-4" :coordinates="coordinates"></leaflet-map>
+                        <masonry-grid class="mt-4"></masonry-grid>
                     </div>
                     <div class="py-5 ml-3 border-top">
                         <div v-if="!reviewed">
-                            <review-buttons :userHash="userHash" page="locations"></review-buttons>
+                            <review-buttons :userHash="userHash" page="repository"></review-buttons>
                         </div>
-                        <div v-else class="mr-1 ml-1">
-                            <next-button next-page="/wordclouds"></next-button>
+                        <div v-else class="mr-1 ml-1 text-center">
+                            <next-button next-page="/top-tweets"></next-button>
                         </div>
                     </div>
                 </card>
             </div>
         </section>
-
     </section>
 </template>
 <script>
 
     import {Bus} from "../bus";
-    import AjaxCaller from '../utils'
-    const ajaxCaller = new AjaxCaller();
-
+    import MasonryGrid from "../components/RepositoryMasonryGrid";
 
     export default {
-        name: "locations",
+        name: "repository",
         props: ['userHash'],
-        components: {},
+        components: {MasonryGrid},
         data() {
             return {
-                dataReady: false,
-
-                endpoint: 'locations',
-                reviewed: false
-            }
-        },
-        mounted(){
-          this.updateMap();
-        },
-        methods: {
-            updateMap() {
-                let data = {};
-                ajaxCaller.get(this.endpoint, data).then((results) => {
-                    this.coordinates = results.data;
-                    this.dataReady = true;
-
-                });
+                endpoint: 'twitter/locations',
+                reviewed: false,
+                words: []
             }
         },
         created() {

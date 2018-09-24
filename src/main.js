@@ -4,14 +4,14 @@ import router from "./router";
 import Argon from "./plugins/argon-kit";
 import './plugins/fontawesome-library'
 
-import AirbnbStyleDatepicker from 'vue-airbnb-style-datepicker'
-import 'vue-airbnb-style-datepicker/dist/styles.css'
-
-const datepickerOptions = {};
-Vue.use(AirbnbStyleDatepicker, datepickerOptions);
+import {VueMasonryPlugin} from 'vue-masonry';
 
 Vue.config.productionTip = false;
 Vue.use(Argon);
+Vue.use(VueMasonryPlugin)
+import BootstrapVue from 'bootstrap-vue'
+
+Vue.use(BootstrapVue);
 new Vue({
     router,
     render: h => h(App)

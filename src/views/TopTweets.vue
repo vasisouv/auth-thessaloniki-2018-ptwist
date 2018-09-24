@@ -18,55 +18,40 @@
                     <div class="px-4 pb-3">
 
                         <div class="row justify-content-center">
-                            <div class="text-center mt-5"><h3 class="display-3">Τοποθεσίες</h3>
+                            <div class="text-center mt-5"><h3 class="display-3">Κορυφαία tweets</h3>
                             </div>
                         </div>
-                        <leaflet-map v-if="dataReady" class="mt-4" :coordinates="coordinates"></leaflet-map>
+                        <top-tweets-masonry-grid class="mt-4"></top-tweets-masonry-grid>
                     </div>
                     <div class="py-5 ml-3 border-top">
                         <div v-if="!reviewed">
-                            <review-buttons :userHash="userHash" page="locations"></review-buttons>
+                            <review-buttons :userHash="userHash" page="top-tweets"></review-buttons>
                         </div>
-                        <div v-else class="mr-1 ml-1">
-                            <next-button next-page="/wordclouds"></next-button>
+                        <div v-else class="mr-1 ml-1 text-center">
+                            <next-button next-page="/thanks"></next-button>
                         </div>
                     </div>
                 </card>
             </div>
         </section>
-
     </section>
 </template>
 <script>
 
     import {Bus} from "../bus";
+    import TopTweetsMasonryGrid from "../components/TopTweetsMasonryGrid";
     import AjaxCaller from '../utils'
+
     const ajaxCaller = new AjaxCaller();
 
-
     export default {
-        name: "locations",
+        name: "repository",
         props: ['userHash'],
-        components: {},
+        components: {'top-tweets-masonry-grid' : TopTweetsMasonryGrid},
         data() {
             return {
-                dataReady: false,
-
-                endpoint: 'locations',
-                reviewed: false
-            }
-        },
-        mounted(){
-          this.updateMap();
-        },
-        methods: {
-            updateMap() {
-                let data = {};
-                ajaxCaller.get(this.endpoint, data).then((results) => {
-                    this.coordinates = results.data;
-                    this.dataReady = true;
-
-                });
+                reviewed: false,
+                topTweets: []
             }
         },
         created() {

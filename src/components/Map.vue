@@ -7,7 +7,13 @@
 
 </template>
 <script>
-    import L from 'leaflet';
+    import 'leaflet';
+    import 'leaflet/dist/leaflet.css';
+    import 'leaflet.markercluster'
+    import 'leaflet.markercluster/dist/MarkerCluster.css'
+    import 'leaflet.markercluster/dist/MarkerCluster.Default.css'
+
+    const L = window['L'];
 
     export default {
         name: 'leaflet-map',
@@ -22,6 +28,7 @@
 
             this.map = L.map('map', {preferCanvas: true}).setView([30, 0], 2);
             L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(this.map);
+            this.placeCoordinates();
 
 
         },
@@ -30,9 +37,19 @@
                 error: false
             }
         },
-        methods:{
-            placeCoordinates(){
+        methods: {
+            placeCoordinates() {
                 let markers = L.markerClusterGroup();
+                this.coordinates.forEach((coordinate) => {
+                    try {
+                        markers.addLayer(L.marker(new L.LatLng(parseFloat(coordinate.lat), parseFloat(coordinate.lng))));
+                    }
+                    catch (e) {
+                    }
+
+                });
+                this.map.addLayer(markers);
+
             }
         }
     }
@@ -45,7 +62,6 @@
         width: 100%
         height: 500px
         z-index: 2
-
 
 
 </style>

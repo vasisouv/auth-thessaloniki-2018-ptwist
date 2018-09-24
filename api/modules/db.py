@@ -20,5 +20,16 @@ class Db:
             wc_objs.append({"name": key, "value": value})
         return wc_objs
 
+    def get_top_tweets(self):
+        return list(self.db['top-tweets'].find({}))
+
+    def get_locations(self):
+        coordinates = []
+        locations = list(self.db['locations'].find({}))
+        for l in locations:
+            for lnested in l['locations']:
+                coordinates.append(lnested['coordinates'])
+        return coordinates
+
     def insert_review(self, review):
         self.db['reviews'].insert_one(review)

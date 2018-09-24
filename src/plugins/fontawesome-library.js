@@ -53,10 +53,33 @@ import {faInfoCircle} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faInfoCircle);
 
-import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons'
+import {faCheckCircle} from '@fortawesome/free-solid-svg-icons'
 
-library.add(faExclamationTriangle);
+library.add(faCheckCircle);
 
+import {faDownload} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faDownload);
+
+import {faThumbsUp} from '@fortawesome/free-regular-svg-icons'
+
+library.add(faThumbsUp);
+
+import {faEye} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faEye);
+
+import {faHeart} from '@fortawesome/free-regular-svg-icons'
+
+library.add(faHeart);
+
+import {faComment} from '@fortawesome/free-regular-svg-icons'
+
+library.add(faComment);
+
+import {faSmileBeam} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faSmileBeam);
 
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 

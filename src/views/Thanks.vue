@@ -17,17 +17,18 @@
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-8 text-center pt-lg">
                         <img src="../assets/img/ptwist_logo_text.png" style="width: 500px;" class="img-fluid">
-                        <p class="lead text-white mt-4 mb-5">Πατήστε το παρακάτω πλήκτρο για να ξεκινήσετε την
-                            διαδραστική παρουσίαση.</p>
-                        <div class="btn-wrapper">
-                            <router-link to="/locations" title="Locations">
-                                <base-button tag="a"
-                                             class="text-white mb-3 mb-sm-0 btn-lg"
-                                             type="info">
-                                    Ξεκινηστε την παρουσιαση
-                                </base-button>
-                            </router-link>
-                        </div>
+                        <p class="lead text-white mt-4 mb-5">
+                            <font-awesome-icon class="ml-2 mr-1 thanks-smile"
+                                               :icon="{prefix: 'fas', iconName: 'smile-beam'}"/>
+                            <span class="d-block mt-3"> Σας ευχαριστούμε πολύ για την συνεισφορά σας!</span>
+                        </p>
+                            <base-button tag="a"
+                                         href="/"
+                                         class="mt-3 mb-sm-0 btn-lg"
+                                         type="warning">
+                                Νεα αξιολογηση
+                            </base-button>
+
                     </div>
                 </div>
                 <div class="row align-items-center justify-content-around stars-and-coded">
