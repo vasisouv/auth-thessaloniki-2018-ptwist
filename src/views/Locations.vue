@@ -1,5 +1,5 @@
 <template>
-    <section class="section-shaped my-0">
+    <section class="section-shaped section-hero my-0">
         <div class="shape shape-style-1 shape-ptwist">
             <span class="span-150"></span>
             <span class="span-50"></span>
@@ -16,11 +16,6 @@
             <div class="container">
                 <card shadow class="card-profile" no-body>
                     <div class="px-4 pb-3">
-
-                        <div class="row justify-content-center">
-                            <div class="text-center mt-5"><h3 class="display-3">Τοποθεσίες</h3>
-                            </div>
-                        </div>
                         <leaflet-map v-if="dataReady" class="mt-4" :coordinates="coordinates"></leaflet-map>
                     </div>
                     <div class="py-5 ml-3 border-top">
@@ -34,13 +29,14 @@
                 </card>
             </div>
         </section>
-
+        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
     </section>
 </template>
 <script>
 
     import {Bus} from "../bus";
     import AjaxCaller from '../utils'
+
     const ajaxCaller = new AjaxCaller();
 
 
@@ -56,8 +52,8 @@
                 reviewed: false
             }
         },
-        mounted(){
-          this.updateMap();
+        mounted() {
+            this.updateMap();
         },
         methods: {
             updateMap() {

@@ -81,6 +81,10 @@ import {faSmileBeam} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faSmileBeam);
 
+import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons'
+
+library.add(faExclamationTriangle);
+
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

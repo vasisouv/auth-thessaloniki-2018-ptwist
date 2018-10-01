@@ -17,11 +17,6 @@
                 <card shadow class="card-profile" no-body>
                     <div class="px-4 pb-3">
 
-                        <div class="row justify-content-center">
-                            <div class="text-center mt-5"><h3 class="display-3">Σχέδια από το <a class="text-blue"
-                                    href="https://www.thingiverse.com/" target="_blank"> thingiverse.com</a></h3>
-                            </div>
-                        </div>
                         <masonry-grid class="mt-4"></masonry-grid>
                     </div>
                     <div class="py-5 ml-3 border-top">
@@ -35,6 +30,7 @@
                 </card>
             </div>
         </section>
+        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
     </section>
 </template>
 <script>

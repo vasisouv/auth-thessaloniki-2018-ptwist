@@ -33,3 +33,6 @@ class Db:
 
     def insert_review(self, review):
         self.db['reviews'].insert_one(review)
+
+    def insert_personal_data(self, personal_data):
+        self.db['personal_data'].insert_one(personal_data)

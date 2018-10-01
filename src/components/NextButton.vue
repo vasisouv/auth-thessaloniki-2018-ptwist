@@ -8,8 +8,14 @@
                 </h3>
             </div>
             <div class="col-md-4 d-flex">
-
-                <router-link :to="nextPage">
+                <router-link :userHash="userHash" v-if="nextPage==='thanks'" :to="nextPage">
+                    <base-button tag="a"
+                                 class="mb-3 text-white w-100 mr-5 mb-sm-0 btn-lg"
+                                 type="default">
+                        Επομενο
+                    </base-button>
+                </router-link>
+                <router-link v-else :to="nextPage">
                     <base-button tag="a"
                                  class="mb-3 text-white w-100 mr-5 mb-sm-0 btn-lg"
                                  type="default">
@@ -28,6 +34,9 @@
         name: 'next-button',
         props: {
             nextPage: {
+                type: String
+            },
+            userHash:{
                 type: String
             }
         },

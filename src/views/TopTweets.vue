@@ -28,12 +28,13 @@
                             <review-buttons :userHash="userHash" page="top-tweets"></review-buttons>
                         </div>
                         <div v-else class="mr-1 ml-1 text-center">
-                            <next-button next-page="/thanks"></next-button>
+                            <next-button :userHash="userHash" next-page="/thanks"></next-button>
                         </div>
                     </div>
                 </card>
             </div>
         </section>
+        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
     </section>
 </template>
 <script>

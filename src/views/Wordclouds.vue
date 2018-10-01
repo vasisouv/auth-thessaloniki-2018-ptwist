@@ -16,11 +16,6 @@
             <div class="container">
                 <card shadow class="card-profile" no-body>
                     <div class="px-4 pb-3">
-
-                        <div class="row justify-content-center">
-                            <div class="text-center mt-5"><h3 class="display-3">Σύννεφο Λέξεων</h3>
-                            </div>
-                        </div>
                         <ptwist-wordcloud :words="words"></ptwist-wordcloud>
                     </div>
                     <div class="py-5 ml-3 border-top">
@@ -34,7 +29,7 @@
                 </card>
             </div>
         </section>
-
+        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
     </section>
 </template>
 <script>

@@ -43,10 +43,30 @@
 .tweet-footer {
   font-size: 12px;
 }
+
 .tweet-profile {
   width: 40px;
 }
 
-.thanks-smile{
+.thanks-smile {
   font-size: 60px;
+}
+
+.input-info {
+  font-size: 14px;
+}
+
+.input-info-container {
+  border-left: 1px solid rgba(108, 108, 108, 0.6);
+}
+
+.w-70 {
+  width: 70%;
+}
+
+.info-card {
+  position: fixed;
+  top: 65px;
+  right: 50px;
+  width: 350px;
 }

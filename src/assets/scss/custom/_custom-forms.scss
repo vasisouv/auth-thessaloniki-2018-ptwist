@@ -37,7 +37,7 @@
         &:checked {
             ~ .custom-control-label {
                 &::before {
-                    box-shadow: $input-focus-alternative-box-shadow;
+                    box-shadow: $warning;
                 }
             }
         }
@@ -64,7 +64,7 @@
                     border-color: $custom-control-indicator-checked-border-color;
                 }
                 &::after {
-                    background-image: $custom-checkbox-indicator-icon-checked;
+                    background-image: $warning;
                 }
             }
         }
@@ -152,7 +152,7 @@
                     border: $custom-control-indicator-border-width solid $custom-control-indicator-disabled-bg;
 
                     &:before {
-                        background-color: lighten($custom-control-indicator-checked-bg, 10%);
+                        background-color: lighten($warning, 10%);
                     }
                 }
             }

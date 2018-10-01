@@ -1,30 +1,12 @@
 <template>
-    <div class="row mr-1 ml-1">
-        <base-button v-on:click="sendReview(1)" tag="a"
-                     class="mb-3 text-white w-20 mb-sm-0 btn-lg"
-                     type="very-bad">
-            Πολυ κακο
+    <div style="margin-left:-20px;" class="mr-1 d-flex justify-content-center align-items-center">
+        <base-button class="review-button" v-on:click="sendReview(1)" type="very-bad">Καθολου ενδιαφερον
         </base-button>
-        <base-button v-on:click="sendReview(2)" tag="a"
-                     class="mb-3 text-white w-20 mb-sm-0 btn-lg"
-                     type="bad">
-            Κακο
-        </base-button>
-        <base-button v-on:click="sendReview(3)" tag="a"
-                     class="mb-3 text-black-50 w-20 mb-sm-0 btn-lg"
-                     type="average">
-            μετριο
-        </base-button>
-        <base-button v-on:click="sendReview(4)" tag="a"
-                     class="mb-3 text-white w-20 mb-sm-0 btn-lg"
-                     type="good">
-            καλο
-        </base-button>
-        <base-button v-on:click="sendReview(5)" tag="a"
-                     class="mb-3 text-white w-20 mb-sm-0 btn-lg"
-                     type="very-good">
-            Πολυ καλο
-        </base-button>
+        <base-button class="review-button" v-on:click="sendReview(2)" type="bad">Λιγο ενδιαφερον</base-button>
+        <base-button class="review-button" v-on:click="sendReview(3)" type="average">Μετριο</base-button>
+        <base-button class="review-button" v-on:click="sendReview(4)" type="good">Λιγο ενδιαφερον</base-button>
+        <base-button class="review-button" v-on:click="sendReview(5)" type="very-good">Πολυ ενδιαφερον</base-button>
+
     </div>
 </template>
 <script>

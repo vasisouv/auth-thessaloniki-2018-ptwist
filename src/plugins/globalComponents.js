@@ -12,6 +12,7 @@ import Card from "../components/Card";
 import Icon from "../components/Icon";
 import TextIcon from "../components/TextIcon"
 import BaseDropdown from "../components/BaseDropdown"
+import Modal from "../components/Modal"
 
 //custom components
 import DateRangePicker from "../components/DateRangePicker"
@@ -21,6 +22,7 @@ import Map from '../components/Map'
 import ReviewButtons from '../components/ReviewButtons'
 import NextButton from '../components/NextButton'
 import Wordcloud from '../components/Wordcloud'
+import InfoCard from '../components/InfoCard'
 
 
 export default {
@@ -39,6 +41,7 @@ export default {
         Vue.component(Card.name, Card);
         Vue.component(Icon.name, Icon);
         Vue.component(TextIcon.name, TextIcon);
+        Vue.component(Modal.name, Modal);
         // custom components
         Vue.component(LanguageSelect.name, LanguageSelect);
         Vue.component(CollectionsSelect.name, CollectionsSelect);
@@ -47,6 +50,7 @@ export default {
         Vue.component(ReviewButtons.name, ReviewButtons);
         Vue.component(NextButton.name, NextButton);
         Vue.component(Wordcloud.name, Wordcloud);
+        Vue.component(InfoCard.name, InfoCard);
 
     }
 };

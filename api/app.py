@@ -7,6 +7,7 @@ from api.controllers.wordclouds_controller import Wordclouds as Wordclouds
 from api.controllers.locations_controller import Locations as Locations
 from api.controllers.top_tweets_controller import TopTweets as TopTweets
 from api.controllers.reviews_controller import Reviews as Reviews
+from api.controllers.personal_data_controller import PersonalData as PersonalData
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -15,6 +16,7 @@ cors = CORS(app)
 api = Api(app, prefix='/api/')
 api.add_resource(Wordclouds, "wordclouds", endpoint="wordclouds_endpoint")
 api.add_resource(Reviews, "reviews/save", endpoint="reviews_endpoint")
+api.add_resource(PersonalData, "personal_data/save", endpoint="personal_data_endpoint")
 api.add_resource(TopTweets, "top-tweets", endpoint="toptweets_endpoint")
 api.add_resource(Locations, "locations", endpoint="locations_endpoint")
 

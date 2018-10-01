@@ -25,7 +25,7 @@
   opacity: 0;
 
   &:checked ~ .custom-control-label::before {
-    color: $custom-control-indicator-checked-color;
+    color: $warning;
     @include gradient-bg($custom-control-indicator-checked-bg);
     @include box-shadow($custom-control-indicator-checked-box-shadow);
   }
@@ -36,14 +36,14 @@
   }
 
   &:active ~ .custom-control-label::before {
-    color: $custom-control-indicator-active-color;
+    color: $warning;
     background-color: $custom-control-indicator-active-bg;
     @include box-shadow($custom-control-indicator-active-box-shadow);
   }
 
   &:disabled {
     ~ .custom-control-label {
-      color: $custom-control-label-disabled-color;
+      color: $warning;
 
       &::before {
         background-color: $custom-control-indicator-disabled-bg;
@@ -102,7 +102,7 @@
 
   .custom-control-input:checked ~ .custom-control-label {
     &::before {
-      @include gradient-bg($custom-control-indicator-checked-bg);
+      @include gradient-bg($warning);
     }
     &::after {
       background-image: $custom-checkbox-indicator-icon-checked;
