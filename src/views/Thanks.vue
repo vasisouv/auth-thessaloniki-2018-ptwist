@@ -16,7 +16,9 @@
             <div class="col px-0">
                 <div class="row justify-content-center align-items-center">
                     <div class="col-lg-8 text-center pt-lg">
-                        <img src="../assets/img/ptwist_logo_text.png" style="width: 500px;" class="img-fluid">
+                        <img src="../assets/img/ptwist_logo_text.png" style="width: 300px;" class="img-fluid"><br>
+                        <h1 class="lead text-white">Like PlasticTwist on Facebook!</h1>
+                        <img src="../assets/img/qr_code.png" style="width: 100px;" class="img-fluid">
 
                     </div>
                 </div>
@@ -43,6 +45,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <input type="number" aria-describedby="addon-right addon-left" v-model="age" min="0"
+                                           max="200"
                                            placeholder="Ηλικία" class="form-control-alternative shadow form-control">
                                 </div>
 
@@ -50,6 +53,7 @@
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <input aria-describedby="addon-right addon-left" v-model="email" type="email"
+                                           maxlength="50" minlength="3"
                                            placeholder="E-mail" class="form-control-alternative shadow form-control">
                                 </div>
 
@@ -59,7 +63,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="text" aria-describedby="addon-right addon-left" v-model="name"
-                                           placeholder="Ονοματεπώνυμο"
+                                           placeholder="Ονοματεπώνυμο" maxlength="50" minlength="3"
                                            class="form-control-alternative shadow form-control">
                                 </div>
 
@@ -183,6 +187,7 @@
         methods: {
             savePersonalInfo() {
                 if (!this.hasErrors()) {
+                    this.infoSubmitted = true;
                     const ajaxCaller = new AjaxCaller();
                     console.log(this.$parent.userHash);
 

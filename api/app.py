@@ -3,11 +3,11 @@ from flask_cors import CORS
 from flask_restful import Api
 
 
-from api.controllers.wordclouds_controller import Wordclouds as Wordclouds
-from api.controllers.locations_controller import Locations as Locations
-from api.controllers.top_tweets_controller import TopTweets as TopTweets
-from api.controllers.reviews_controller import Reviews as Reviews
-from api.controllers.personal_data_controller import PersonalData as PersonalData
+from controllers.wordclouds_controller import Wordclouds as Wordclouds
+from controllers.locations_controller import Locations as Locations
+from controllers.top_tweets_controller import TopTweets as TopTweets
+from controllers.reviews_controller import Reviews as Reviews
+from controllers.personal_data_controller import PersonalData as PersonalData
 
 app = Flask(__name__)
 cors = CORS(app)
