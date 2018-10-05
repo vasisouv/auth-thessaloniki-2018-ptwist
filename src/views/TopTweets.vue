@@ -34,7 +34,7 @@
                 </card>
             </div>
         </section>
-        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
+        <info-card title="Κορυφαία Tweets" :text="infoText" icon="retweet"></info-card>
     </section>
 </template>
 <script>
@@ -52,6 +52,7 @@
         data() {
             return {
                 reviewed: false,
+                infoText: 'Στην ενότητα αυτή παρουσιάζονται τα tweets που σχετίζονται με το πλαστικό και είχαν την μεγαλύτερη απήχηση στους χρήστες του Twitter. ΄Η κατάταξη τους σε αυτή την demo έκδοση γίνεται βάση του αριθμού των retweets που έχει το κάθε tweet.',
                 topTweets: []
             }
         },

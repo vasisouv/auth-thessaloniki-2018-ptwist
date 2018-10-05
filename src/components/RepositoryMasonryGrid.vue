@@ -7,7 +7,7 @@
                         img-top
                         tag="article"
                         class="masonry-card mb-2"
-                        style="max-width: 18rem;">
+                        style="max-width: 19rem;">
                     <p>
                         by <span class="font-weight-bold">{{item.creator}}</span>
 

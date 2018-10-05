@@ -42,15 +42,15 @@
                         <div class="row w-70 mx-auto">
                             <div class="col-md-4">
                                 <div class="form-group">
-                                    <input type="number" aria-describedby="addon-right addon-left" v-model="age"
-                                           placeholder="Ηλικία" class="form-control">
+                                    <input type="number" aria-describedby="addon-right addon-left" v-model="age" min="0"
+                                           placeholder="Ηλικία" class="form-control-alternative shadow form-control">
                                 </div>
 
                             </div>
                             <div class="col-md-8">
                                 <div class="form-group">
                                     <input aria-describedby="addon-right addon-left" v-model="email" type="email"
-                                           placeholder="E-mail" class="form-control">
+                                           placeholder="E-mail" class="form-control-alternative shadow form-control">
                                 </div>
 
                             </div>
@@ -59,7 +59,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <input type="text" aria-describedby="addon-right addon-left" v-model="name"
-                                           placeholder="Ονοματεπώνυμο" class="form-control">
+                                           placeholder="Ονοματεπώνυμο"
+                                           class="form-control-alternative shadow form-control">
                                 </div>
 
                             </div>
@@ -68,15 +69,52 @@
                             <input id="termsCheckbox" v-model="acceptedTerms" type="checkbox"
                                    class="custom-control-input">
                             <label for="termsCheckbox" class="text-white custom-control-label"> Συμφωνώ με τους
-                                <a class="text-black-50" @click="showModal = true">όρους και προϋποθέσεις </a>
+
                             </label>
+                            <a style="cursor: pointer" class="text-black-50" @click="showModal = true">όρους και
+                                προϋποθέσεις </a>
                         </div>
-                        <modal :show.sync="showModal">
+                        <modal :show.sync="showModal" class="text-justify">
                             <template slot="header">
-                                <h5 class="modal-title" id="exampleModalLabel">Όροι και προϋποθέσεις</h5>
+                                <h5 class="modal-title" id="exampleModalLabel">Όροι και προϋποθέσεις συμμετοχής</h5>
                             </template>
                             <div>
-                                text text text
+                                <p>Συμπληρώνοντας την παραπάνω φόρμα συμφωνώ ότι:</p>
+                                <ol type="1">
+                                    <li>
+                                        Λαμβάνω μέρος στο ερευνητικό πρόγραμμα PlasticTwist (<a
+                                            href="http://plastictwist.com">http://plastictwist.com</a>) το οποίο
+                                        υλοποιείται υπό το χρηματοδοτικό πρόγραμμα της Ε.Ε. για την Έρευνα και την
+                                        Καινοτομία Horizon 2020. Το αντικείμενο του προγράμματος αφορά στην ανάδειξη
+                                        καινοτόμων λύσεων με τη δημιουργική αξιοποίηση των τεχνολογιών Πληροφορικής για
+                                        την επαναχρησιμοποίηση πλαστικών απορριμμάτων με στόχο την ευαισθητοποίηση των
+                                        πολιτών σχετικά με τις πρακτικές της κυκλικής οικονομίας και την βιώσιμη
+                                        καινοτομία μέσω της απόδοσης αξίας στα πλαστικά μιας χρήσης.
+                                    </li>
+                                    <li>
+                                        Είχα αρκετό χρόνο να σκεφτώ τις πληροφορίες τις οποίες θα παραθέσω και να ρωτήσω
+                                        οποιαδήποτε ερώτηση είχα, και είμαι ικανοποιημένος/ή από τις απαντήσεις που
+                                        έλαβα.
+                                    </li>
+                                    <li>
+                                        Κατανοώ ποιος θα έχει πρόσβαση στα προσωπικά δεδομένα που παρέχω, πως θα
+                                        αποθηκευτούν
+                                        τα δεδομένα και τι θα συμβεί με τα δεδομένα μου κατά το πέρας του προγράμματος.
+                                    </li>
+                                    <li>
+                                        Κατανοώ ότι τα δεδομένα μου, εφόσον ανωνυμοποιηθούν (μετατραπούν σε
+                                        μη-αναγνωρίσιμη μορφή),
+                                        μπορεί να αρχειοθετηθούν και να διαμοιραστούν σε άλλους για νόμιμους
+                                        ερευνητικούς
+                                        σκοπούς.
+                                    </li>
+                                    <li>
+                                        Κατανοώ ότι η συμμετοχή μου είναι εθελοντική και ότι έχω την δυνατότητα να
+                                        αποσυρθώ
+                                        ανά πάσα στιγμή χωρίς δικαιολογία.
+                                    </li>
+                                </ol>
+
                             </div>
                             <template slot="footer">
                                 <base-button type="primary" @click="showModal = false">ΟΚ</base-button>
@@ -125,6 +163,7 @@
 </template>
 <script>
     import AjaxCaller from '../utils'
+
     export default {
         name: "components",
         components: {},
@@ -175,11 +214,11 @@
                     this.error = true;
                     return true
                 }
-                else if (!this.acceptedTerms){
+                else if (!this.acceptedTerms) {
                     this.errorText = 'Παρακαλούμε συμφωνήστε με τους όρους και προϋποθέσεις.';
                     this.error = true;
                     return true
-                }else return false
+                } else return false
 
             },
             mailIsValid() {

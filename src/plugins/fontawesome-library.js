@@ -1,89 +1,58 @@
 import Vue from "vue";
 import {library} from '@fortawesome/fontawesome-svg-core'
 
-import {faCoffee} from '@fortawesome/free-solid-svg-icons'
+import {
+    faCoffee,
+    faComments,
+    faExternalLinkAlt,
+    faDesktop,
+    faUsersCog,
+    faMapMarkedAlt,
+    faBook,
+    faInfoCircle,
+    faCheckCircle,
+    faDownload,
+    faEye,
+    faSmileBeam,
+    faExclamationTriangle,
+    faPrint,
+    faRetweet
+} from '@fortawesome/free-solid-svg-icons'
 
 library.add(faCoffee);
-
-import {faExternalLinkAlt} from '@fortawesome/free-solid-svg-icons'
-
+library.add(faComments);
 library.add(faExternalLinkAlt);
-
-import {faDesktop} from '@fortawesome/free-solid-svg-icons'
-
 library.add(faDesktop);
+library.add(faUsersCog);
+library.add(faMapMarkedAlt);
+library.add(faBook);
+library.add(faInfoCircle);
+library.add(faCheckCircle);
+library.add(faDownload);
+library.add(faEye);
+library.add(faSmileBeam);
+library.add(faExclamationTriangle);
+library.add(faPrint);
+library.add(faRetweet);
 
-import {faUserCircle} from '@fortawesome/free-regular-svg-icons'
+import {
+    faUserCircle,
+    faThumbsUp,
+    faHeart,
+    faComment
+} from '@fortawesome/free-regular-svg-icons'
 
 library.add(faUserCircle);
-
-import {faTwitter} from '@fortawesome/free-brands-svg-icons'
-
-library.add(faTwitter);
-
-import {faFacebookF} from '@fortawesome/free-brands-svg-icons'
-
-library.add(faFacebookF);
-
-import {faUsersCog} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faUsersCog);
-
-import {faComments} from '@fortawesome/free-regular-svg-icons'
-
-library.add(faComments);
-
-import {faConnectdevelop} from '@fortawesome/free-brands-svg-icons'
-
-library.add(faConnectdevelop);
-
-import {faMapMarkedAlt} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faMapMarkedAlt);
-
-import {faGithub} from '@fortawesome/free-brands-svg-icons'
-
-library.add(faGithub);
-
-import {faBook} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faBook);
-
-import {faInfoCircle} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faInfoCircle);
-
-import {faCheckCircle} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faCheckCircle);
-
-import {faDownload} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faDownload);
-
-import {faThumbsUp} from '@fortawesome/free-regular-svg-icons'
-
 library.add(faThumbsUp);
-
-import {faEye} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faEye);
-
-import {faHeart} from '@fortawesome/free-regular-svg-icons'
-
 library.add(faHeart);
-
-import {faComment} from '@fortawesome/free-regular-svg-icons'
-
 library.add(faComment);
 
-import {faSmileBeam} from '@fortawesome/free-solid-svg-icons'
+import {faTwitter, faFacebookF, faConnectdevelop, faGithub} from '@fortawesome/free-brands-svg-icons'
 
-library.add(faSmileBeam);
-
-import {faExclamationTriangle} from '@fortawesome/free-solid-svg-icons'
-
-library.add(faExclamationTriangle);
+library.add(faTwitter);
+library.add(faFacebookF);
+library.add(faConnectdevelop);
+library.add(faGithub);
 
 import {FontAwesomeIcon} from '@fortawesome/vue-fontawesome'
 

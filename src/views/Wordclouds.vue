@@ -29,7 +29,7 @@
                 </card>
             </div>
         </section>
-        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
+        <info-card title="Σύννεφο λέξεων" :text="infoText" icon="comments"></info-card>
     </section>
 </template>
 <script>
@@ -50,6 +50,7 @@
         data() {
             return {
                 endpoint: 'twitter/locations',
+                infoText: 'Το σύννεφο λέξεων που εμφανίζεται, δημιουργείται από τις λέξεις με την μεγαλύτερη συχνότητα εμφάνισης στα δεδομένα μας. Όσο μεγαλύτερη η λέξη σε μέγεθος, τόσο μεγαλύτερη και η συχνότητα εμφάνισης της. Το εργαλείο αυτό βοηθάει στο να εντοπίσουμε νεοεμφανιζόμενες τάσεις, πιθανές θεματικές συνδέσεις, κτλ.',
                 reviewed: false,
                 words: []
             }

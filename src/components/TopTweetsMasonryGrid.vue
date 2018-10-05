@@ -8,7 +8,7 @@
                         :img-src="tweet.image ? require('../assets/img/top-tweets/'+tweet.image) : ''"
                         tag="article"
                         class="shadow masonry-card mb-2"
-                        style="max-width: 18rem;">
+                        style="max-width: 19rem;">
 
 
                     <div class="row">

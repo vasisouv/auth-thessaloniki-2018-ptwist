@@ -30,7 +30,7 @@
                 </card>
             </div>
         </section>
-        <info-card title="Τοποθεσίες" text="Info text" icon="map-marked-alt"></info-card>
+        <info-card title="Σχέδια για 3D εκτύπωση" :text="infoText" icon="print"></info-card>
     </section>
 </template>
 <script>
@@ -46,6 +46,7 @@
             return {
                 endpoint: 'twitter/locations',
                 reviewed: false,
+                infoText: 'Σε αυτή την ενότητα παρουσιάζονται 3D printing designs που υπάρχουν ήδη στην πλατφόρμα thingiverse και έχουν δωρεάν license. Η συγκεκριμένη ενότητα θα εμπλουτιστεί στο μέλλον με 3D printing designs που θα έχουν ως πρώτη ύλη ανακυκλωμένο πλαστικό, καθώς και ιδέες για DIY κατασκευές.',
                 words: []
             }
         },
